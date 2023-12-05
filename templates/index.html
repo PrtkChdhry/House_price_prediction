@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Price Prediction</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #FBEAEB ;
+      margin-left: 10px;
+      padding: 0;
+      color: #2F3C7E;
+      display: inline-flexbox;
+    }
+
+    #form-container {
+      flex-basis: 40%;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 0 20px;
+      margin: 20px auto 0 auto;
+      padding-bottom: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0069d9;
+    }
+  </style>
+</head>
+<body>
+  <h1>House Price Prediction</h1>
+  <form action="/predict" method="post">
+    <label for="area">Area (in square feet):</label>
+    <input type="number" name="area" required><br>
+
+    <label for="bedrooms">Number of Bedrooms:</label>
+    <input type="number" name="bedrooms" required><br>
+
+    <label for="bathrooms">Number of Bathrooms:</label>
+    <input type="number" name="bathrooms" required><br>
+
+    <label for="stories">Number of Stories:</label>
+    <input type="number" name="stories" required><br>
+
+    <label for="mainroad">Main Road Proximity:</label>
+    <select name="mainroad" required>
+      <option value="0">Not near main road</option>
+      <option value="1">Near main road</option>
+    </select><br>
+
+    <label for="guestroom">Guest room availability:</label>
+    <select name="guestroom" required>
+      <option value="0">No guest room</option>
+      <option value="1">Has guest room</option>
+    </select><br>
+
+    <label for="basement">Basement availability:</label>
+    <select name="basement" required>
+      <option value="0">No basement</option>
+      <option value="1">Has basement</option>
+    </select><br>
+
+    <label for="hotwaterheating">Hot water heating system:</label>
+    <select name="hotwaterheating" required>
+      <option value="0">No hot water heating</option>
+      <option value="1">Has hot water heating</option>
+    </select><br>
+
+    <label for="airconditioning">Air conditioning system:</label>
+    <select name="airconditioning" required>
+      <option value="0">No air conditioning</option>
+      <option value="1">Has air conditioning</option>
+    </select><br>
+
+    <label for="parking">Number of parking spaces:</label>
+    <input type="number" name="parking" required><br>
+
+    <label for="prefarea">Preference for a particular area:</label>
+    <select name="prefarea" required>
+      <option value="0">No preference</option>
+      <option value="1">Preference</option>
+    </select><br>
+
+    <label for="furnishingstatus">Furnishing Status:</label>
+    <select name="furnishingstatus" required>
+      <option value="0">Furnished</option>
+      <option value="1">Semi-furnished</option>
+      <option value="2">Un-furnished</option>
+    </select><br>
+
+    <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
